@@ -18,4 +18,4 @@ spring:
 logging.level:
 #  아래의 조건은 로거를 통해 로그를 츌력
   org.hibernate.SQL: debug
-#   org.hibernate.type: trace
+  org.hibernate.type: trace
