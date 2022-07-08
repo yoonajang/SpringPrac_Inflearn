@@ -9,7 +9,7 @@ import javax.persistence.Embeddable;
 public class Address {
 
     private String city;
-    private String street;Ff
+    private String street;
     private String zipcode;
 
     protected Address() {
