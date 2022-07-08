@@ -1,5 +1,5 @@
 package SpringPrac.SpringPrac_Inflearn.domain;
 
-public class DeliveryStatus {
+public enum DeliveryStatus {
     READY, COMP
 }

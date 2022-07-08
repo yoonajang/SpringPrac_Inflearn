@@ -13,8 +13,7 @@ import java.util.List;
 @Setter
 class Member {
 
-    @Id
-    @GeneratedValue
+    @Id @GeneratedValue
     @Column(name="member_id")
     private Long id;
 
@@ -23,7 +22,6 @@ class Member {
     @Embedded
     private Address address;
 
-    @OneToMany
-    private List<Order> order = new ArrayList<>();
-
+    @OneToMany (mappedBy = "member")
+    private List<Order> orders = new ArrayList<>();
 }
