@@ -1,5 +1,7 @@
 package SpringPrac.SpringPrac_Inflearn;
 
+import SpringPrac.SpringPrac_Inflearn.domain.Member;
+import SpringPrac.SpringPrac_Inflearn.repository.MemberRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,28 +15,24 @@ import org.springframework.transaction.annotation.Transactional;
 @SpringBootTest
 
 public class MemberRepositoryTest {
-    @Autowired MemberRepository memberRepository;
+    @Autowired
+    MemberRepository memberRepository;
 
     @Test
     @Transactional  //테스트가 끝나면 롤백!
     @Rollback(false)  // 롤백되었지만, 보고싶을 때!
-    public void testMember() throws Exception {
-        //given
-
-        Member member = new Member();
-        member.setUsername("memberA");
-
-        //when
-
-        Long savedId = memberRepository.save(member);
-        Member findMember = memberRepository.find(savedId);
-
-        //then
-
-        Assertions.assertThat(findMember.getId()).isEqualTo(member.getId());
-        Assertions.assertThat(findMember.getUsername()).isEqualTo(member.getUsername());
-        Assertions.assertThat(findMember).isEqualTo(member);
-        System.out.println("findMember" + "member" );
-
+    public void testMember() {
+//        //given
+//        Member member = new Member();
+//        member.setUsername("memberA");
+//
+//        //when
+//        Long savedId = memberRepository.save(member);
+//        Member findMember = memberRepository.find(savedId);
+//
+//        //then
+//        Assertions.assertThat(findMember.getId()).isEqualTo(member.getId());
+//        Assertions.assertThat(findMember.getUsername()).isEqualTo(member.getUsername());
+//        Assertions.assertThat(findMember).isEqualTo(member);
     }
 }
