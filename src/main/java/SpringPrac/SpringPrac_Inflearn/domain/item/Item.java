@@ -11,8 +11,8 @@ import java.util.List;
 
 @Entity
 @Inheritance (strategy = InheritanceType.JOINED)
-@DiscriminatorColumn (name="dtype")
-@Getter
+@DiscriminatorColumn (name = "dtype")
+@Getter @Setter
 public abstract class Item {
 
     @Id
@@ -25,7 +25,7 @@ public abstract class Item {
     private int stockQuantity;
 
     @ManyToMany(mappedBy = "items")
-    private List<Category> categories = new ArrayList<>();
+    private List<Category> categories = new ArrayList<Category>();
 
     //== 비즈니스 로직 ==//
     /**
@@ -45,4 +45,5 @@ public abstract class Item {
         }
         this.stockQuantity = restStock;
     }
+
 }
