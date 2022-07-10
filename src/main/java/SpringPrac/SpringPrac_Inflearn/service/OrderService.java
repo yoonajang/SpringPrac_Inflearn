@@ -8,6 +8,7 @@ import SpringPrac.SpringPrac_Inflearn.domain.item.Item;
 import SpringPrac.SpringPrac_Inflearn.repository.ItemRepository;
 import SpringPrac.SpringPrac_Inflearn.repository.MemberRepository;
 import SpringPrac.SpringPrac_Inflearn.repository.OrderRepository;
+import SpringPrac.SpringPrac_Inflearn.repository.OrderSearch;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -65,8 +66,8 @@ public class OrderService {
     /**
      * 주문 검색하기
      */
-//    public List<Order> findOrder(OrderSearch orderSearch) {
-//        return orderRepository.findAll(orderSearch);
-//    }
+    public List<Order> findOrders(OrderSearch orderSearch) {
+        return orderRepository.findAllByString(orderSearch);
+    }
 
 }
